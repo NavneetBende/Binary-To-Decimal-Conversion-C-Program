@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+
+void getBinary(int dec)
+{
+    // since, we may need to store large binary values using long long
+    long long binary = 0;
+    int rem, i = 1;
+    
+    while(dec != 0)
+    {
+        rem = dec % 2;
+        dec /= 2;
+        binary += rem * i;
+        
+        // moving to next position ex: units -> tens
+        i *= 10;
+    }
+    printf("%lld",binary);
+}
+ 
+int main()
+{
+    int dec = 19;
+    getBinary(dec);
+    return 0;
+}
